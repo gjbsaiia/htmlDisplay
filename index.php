@@ -14,7 +14,7 @@
 		$dirPath = "/var/www/html/slides/";
 		$slides = scandir($dirPath) or die();
 		foreach ($slides as $slide){
-			echo $slide
+			echo $slide;
 		}
 		?>
 		<section class="second-gallery-section">
