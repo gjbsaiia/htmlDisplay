@@ -13,9 +13,6 @@
 		<?php
 		$dirPath = "/var/www/html/slides/";
 		$slides = scandir($dirPath) or die();
-		foreach ($slides as $slide){
-			echo $slide."\n";
-		}
 		?>
 		<section class="second-gallery-section">
 			<div class="container">
@@ -25,16 +22,20 @@
 						<div class="slideshow-container">
 							<?php
 							foreach ($slides as $slide){
-								echo "<div class=\"mySlides fade\">";
-									echo "<img src=\"slides/{$slide}\" style=\"width:90%\">";
-								echo "</div>";
+								if(!($slide == "." || $slide == "..")){
+									echo "<div class=\"mySlides fade\">";
+										echo "<img src=\"slides/{$slide}\" style=\"width:90%\">";
+									echo "</div>";
+								}
 							}
 							?>
 							<br>
 							<div style="text-align:center">
 								<?php
 								foreach ($slides as $slide){
-									echo "<span class=\"dot\"></span>";
+									if(!($slide == "." || $slide == "..")){
+										echo "<span class=\"dot\"></span>";
+									}
 								}
 								?>
 								<br/>
