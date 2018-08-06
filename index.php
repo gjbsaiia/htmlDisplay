@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<?php
-		$dirPath = "/home/pi/Documents/monitorDisplay/slides/";
+		$dirPath = "/var/www/html/slides/";
 		$slides = scandir($dirPath) or die();
 		?>
 		<section class="second-gallery-section">
