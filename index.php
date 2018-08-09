@@ -60,7 +60,7 @@
 							slides[slideIndex-1].style.display = "block";
 							dots[slideIndex-1].className += " active";
 							slides[slideIndex-1].on('finished', function(){
-								showSlides();
+								slides[slideIndex-1].style.display = "none";
 							});
 						}
 						function setFlag(){
