@@ -11,14 +11,13 @@
 	</head>
 	<body>
 		<?php
-		$dirPath = "/home/gjbsaiia/Documents/projects/monitorDisplay/slides/";
+		$dirPath = "/var/www/html/slides/";
 		$slides = scandir($dirPath) or die();
 		?>
 		<section class="second-gallery-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12" style="text-align:center">
-						<h2> Progressive ETS Operations </h2>
 						<div class="slideshow-container">
 							<?php
 							foreach ($slides as $slide){
