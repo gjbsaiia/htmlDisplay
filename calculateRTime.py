@@ -21,7 +21,7 @@ def calculateRTime(frameRate, directory, path):
 		output.append(subprocess.check_output(command, shell=True))
 	with open(path, "w+") as log:
 		for frames in output:
-			if(frames != ""):
+			if(frames != "" and frames != ''):
 				log.write(str((int(frames)*frameRate)+2)+"\n")
 
 # to run it from command line
