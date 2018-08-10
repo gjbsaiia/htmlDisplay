@@ -17,7 +17,7 @@ def main():
 def calculateRTime(frameRate, directory, path):
 	output = []
 	for file in os.listdir(directory):
-		command = 'identify -format "%n\n" /var/www/html/'+file+' | head -1'
+		command = 'identify -format "%n\n" /var/www/html/slides/'+file+' | head -1'
 		output.append(subprocess.check_output(command, shell=True))
 	with open(path, "w+") as log:
 		for frames in output:
