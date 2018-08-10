@@ -12,7 +12,7 @@ def main():
 	frameRate = 25
 	directory = "/var/www/html/slides/"
 	logFile = "/var/www/html/runtimes.txt"
-	calculateRTime(framRate, directory, logFile)
+	calculateRTime(frameRate, directory, logFile)
 
 def calculateRTime(frameRate, directory, path):
 	output = []
