@@ -14,7 +14,7 @@ def main():
 	logFile = "/var/www/html/runtimes.txt"
 	calculateRTime(framRate, directory, logFile)
 
-def calculateRuntime(frameRate, directory, path):
+def calculateRTime(frameRate, directory, path):
 	output = []
 	for file in os.listdir(directory):
 		command = 'identify -format "%n\n" /var/www/html/'+file+' | head -1'
