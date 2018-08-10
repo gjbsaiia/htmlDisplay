@@ -15,7 +15,7 @@
 		$dirPath = "/var/www/html/slides/";
 		$logPath = "/var/www/html/logfile.txt";
 		$slides = scandir($dirPath) or die();
-		$command = escapeshellcmd($_SERVER['DOCUMENT_ROOT']."/calculateRTime.py");
+		$command = escapeshellcmd("sudo -u www-data ".$_SERVER['DOCUMENT_ROOT']."/calculateRTime.py");
 		shell_exec($command);
 		?>
 		<section class="second-gallery-section">
