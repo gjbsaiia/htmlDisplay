@@ -37,9 +37,9 @@
 							foreach ($slides as $slide){
 								if(!($slide == "." || $slide == "..")){
 										echo "<div class=\"mySlides fade\">";
-											echo "<img src=\"slides/{$slide}\" style=\"width:90%\" gifRunTime=\"{$rTimes[$i]}\">";
+											echo "<img src=\"slides/{$slide}\" style=\"width:90%\" gifRunTime=\"".$rTimes[$i]."\">";
 										echo "</div>";
-										$i++;
+										$i = $i + 1;
 								}
 							}
 							?>
