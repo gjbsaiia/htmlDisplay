@@ -1,4 +1,4 @@
-Griffin Saiia, Tim Thomason, Ryan Bertha
+Griffin Saiia
 
 Seemless Monitor Display:
 	How to Set Up Your Raspberry Pi, and How to Run This Dope Display
