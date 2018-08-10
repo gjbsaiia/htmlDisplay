@@ -13,7 +13,7 @@
 		<?php
 		//Edit this path to point to the slide Directory
 		$dirPath = "/var/www/html/slides/";
-		$logPath = "/var/www/html/logfile.txt";
+		$logPath = "/var/www/html/runtimes.txt";
 		$slides = scandir($dirPath) or die();
 		$command = escapeshellcmd("sudo -u www-data ".$_SERVER['DOCUMENT_ROOT']."/calculateRTime.py");
 		shell_exec($command);
