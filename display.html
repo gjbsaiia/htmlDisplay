@@ -1,0 +1,87 @@
+<!-- Coded by Griffin Saiia for Progressive Insurance Recruitment Project -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Description" content="College Recruitment" />
+		<title>Progressive Internship Recruitment</title>
+		<link type="text/css" rel="stylesheet" href="picture_frame.css">
+	</head>
+	<body>
+		<section class="second-gallery-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12" style="text-align:center">
+						<h2> Progressive ETS Operations </h2>
+						<div class="slideshow-container">
+							<div class="mySlides fade">
+							  <img src="slides/page1.jpg" style="width:90%">
+							</div>
+							<div class="mySlides fade">
+							  <img src="slides/page2.jpg" style="width:90%">
+							</div>
+							<div class="mySlides fade">
+							  <img src="slides/page3.jpg" style="width:90%">
+							</div>
+							<div class="mySlides fade">
+							  <img src="slides/page4.jpg" style="width:90%">
+							</div>
+							<div class="mySlides fade">
+							  <img src="slides/page5.jpg" style="width:90%">
+							</div>
+							<div class="mySlides fade">
+							  <img src="slides/page6.jpg" style="width:90%">
+							</div>
+							<div class="mySlides fade">
+							  <img src="slides/page7.jpg" style="width:90%">
+							</div>
+							<div class="mySlides fade">
+							  <img src="slides/page8.jpg" style="width:90%">
+							</div>
+							<div class="mySlides fade">
+							  <img src="slides/page9.jpg" style="width:90%">
+							</div>
+							<br>
+							<div style="text-align:center">
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<br/>
+								<br/>
+							</div>
+						</div>
+						<script>
+						var slideIndex = 0;
+						showSlides();
+						function showSlides() {
+							var i;
+							var slides = document.getElementsByClassName("mySlides");
+							var dots = document.getElementsByClassName("dot");
+							for (i = 0; i < slides.length; i++) {
+								slides[i].style.display = "none";
+							}
+							slideIndex++;
+							if (slideIndex > slides.length) {slideIndex = 1}
+							for (i = 0; i < dots.length; i++) {
+								 dots[i].className = dots[i].className.replace(" active", "");
+							}
+							slides[slideIndex-1].style.display = "block";
+							dots[slideIndex-1].className += " active";
+							setTimeout(showSlides, 9000);
+						}
+					</script>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	</body>
+</html>
