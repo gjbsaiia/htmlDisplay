@@ -24,22 +24,22 @@
 					<div class="col-md-12" style="text-align:center">
 						<div class="slideshow-container">
 							<?php
-							$rTimes = array();
+							$rTimes = array("");
 							$myfile = fopen($logPath,"r") or die();
 							while (!feof($myfile)){
 								$temp = fgets($myfile);
 								$entry = preg_replace( "/\r|\n/", "", $temp );
-								if(!($entry == "")){
+								if(!($entry == "" || $entry == '')){
 									array_push($rTimes, $entry);
 								}
 							}
+							$i = 0;
 							foreach ($slides as $slide){
 								if(!($slide == "." || $slide == "..")){
-									foreach ($rTimes as $rTime){
-											echo "<div class=\"mySlides fade\">";
-												echo "<img src=\"slides/{$slide}\" style=\"width:90%\" gifRunTime=\"{$rTime}\">";
-											echo "</div>";
-									}
+										echo "<div class=\"mySlides fade\">";
+											echo "<img src=\"slides/{$slide}\" style=\"width:90%\" gifRunTime=\"{$rTimes[$i]}\">";
+										echo "</div>";
+										$i++;
 								}
 							}
 							?>
