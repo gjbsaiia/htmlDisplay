@@ -1,4 +1,4 @@
-<!-- Coded by Griffin Saiia for Progressive Insurance Recruitment Project -->
+<!-- Coded by Griffin Saiia for Progressive Insurance Monitor Display Project -->
 
 <!DOCTYPE html>
 <html>
@@ -11,8 +11,12 @@
 	</head>
 	<body>
 		<?php
+		//Edit this path to point to the slide Directory
 		$dirPath = "/var/www/html/slides/";
+		$logPath = "/var/www/html/logfile.txt";
 		$slides = scandir($dirPath) or die();
+		$command = escapeshellcmd($_SERVER['DOCUMENT_ROOT']."/calculateRTime.py");
+		shell_exec($command);
 		?>
 		<section class="second-gallery-section">
 			<div class="container">
@@ -20,11 +24,23 @@
 					<div class="col-md-12" style="text-align:center">
 						<div class="slideshow-container">
 							<?php
+							$rTimes = array();
+							$myfile = fopen($logPath,"r") or die();
+							while (!feof($myfile)){
+								$temp = fgets($myfile);
+								$entry = preg_replace( "/\r|\n/", "", $temp );
+								if(!($entry == "")){
+									array_push($rTimes, $entry);
+								}
+							}
 							foreach ($slides as $slide){
 								if(!($slide == "." || $slide == "..")){
-									echo "<div class=\"mySlides fade\">";
-										echo "<img src=\"slides/{$slide}\" style=\"width:90%\">";
-									echo "</div>";
+									foreach ($rTimes as $rTime){
+										if(!($rTime == "." || $rTime == ".."))
+											echo "<div class=\"mySlides fade\">";
+												echo "<img src=\"slides/{$slide}\" style=\"width:90%\" gifRunTime=\"{$rTime}\">";
+											echo "</div>";
+									}
 								}
 							}
 							?>
@@ -43,7 +59,6 @@
 						</div>
 						<script>
 						var slideIndex = 0;
-						var flag = false;
 						showSlides();
 						function showSlides() {
 							var i;
@@ -57,17 +72,11 @@
 							for (i = 0; i < dots.length; i++) {
 								 dots[i].className = dots[i].className.replace(" active", "");
 							}
+							var runtime = slides[slideIndex-1].gifRunTime;
 							slides[slideIndex-1].style.display = "block";
 							dots[slideIndex-1].className += " active";
-							slides[slideIndex-1].on('finished', function(){
-								slides[slideIndex-1].style.display = "none";
-							});
+							setTimeout(showSlides, runtime);
 						}
-						function setFlag(){
-							flag = !flag;
-						}
-
-
 					</script>
 				</div>
 			</div>
