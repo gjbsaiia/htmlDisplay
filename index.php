@@ -36,7 +36,6 @@
 							foreach ($slides as $slide){
 								if(!($slide == "." || $slide == "..")){
 									foreach ($rTimes as $rTime){
-										if(!($rTime == "." || $rTime == ".."))
 											echo "<div class=\"mySlides fade\">";
 												echo "<img src=\"slides/{$slide}\" style=\"width:90%\" gifRunTime=\"{$rTime}\">";
 											echo "</div>";
